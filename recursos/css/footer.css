@@ -1,0 +1,19 @@
+footer {
+    background: #FF9999;
+    text-align: center;
+    padding: 45px;
+    position: fixed;
+    width: 100%;
+    font-size: 16px;
+    color: #DB5B5B;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    bottom: 0%;
+}
+
+footer img {
+    width: 250px;
+    position: fixed;
+    right: 20px;
+    bottom: 5px;
+}
