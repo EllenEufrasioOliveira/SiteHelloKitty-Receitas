@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -56,9 +57,146 @@
     </header>
 
     <main>
-        <div>
 
-        </div>
+        <!-- Carrossel com 3 ou 4 imagens  -->
+            <div class="carousel">
+                <img src="recursos/imagens/container_imagem1.1.png" alt="Receita Hello Kitty" class="active">
+                <img src="recursos/imagens/container_imagem2.png" alt="Receita Hello Kitty">
+                <img src="recursos/imagens/container_imagem3.png" alt="Receita Hello Kitty">
+                <button class="btn prev" onclick="prevSlide()">
+                    <img src="recursos/imagens/btnEsquerdo.png" alt="Anterior">
+                </button>
+                <button class="btn next" onclick="nextSlide()">
+                    <img src="recursos/imagens/btnDireto.png" alt="Próximo">
+                </button>
+            
+            </div>
+
+
+        <!-- Função para navegar pelas outras imagens do carrossel - Sem rolagem infinita -->
+        <script>
+            let currentIndex = 0;
+            const images = document.querySelectorAll(".carousel img");
+
+            function showSlide(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle("active", i === index);
+            });
+            }
+
+            function nextSlide() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showSlide(currentIndex);
+            }
+
+            function prevSlide() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showSlide(currentIndex);
+            }
+        </script>
+
+        <!-- Seção para ir até receitas -->
+        <section class="principal">
+            <div>
+                <h2>Cozinhando com Carinho: 
+                    <br><span>Receitas da 
+                    <br>Hello Kitty</span>
+                </h2>
+                <a href="receitas.html" class="btnReceitas">VER RECEITAS</a>
+            </div>
+            
+            <div>
+                <img src="recursos/imagens/Cupcake.png" alt="Cupcake Hello Kitty">
+            </div>
+        </section>
+
+        <!-- Seção de destaques -->
+        <section class="destaques">
+            <h2>Destaques da Semana</h2>
+            <div class="cards">
+                <div class="card">
+                    <a href="receitas.html">
+                        <img src="recursos/imagens/destaques/Biscoitos.png" alt="Biscoitos">
+                    </a>                    
+                    <p>Biscoitos Amanteigados</p>
+                    <span>⏱ 45 min</span>
+                </div>
+                <div class="card">
+                    <a href="receitas.html">
+                        <img src="recursos/imagens/destaques/Cupcake.png" alt="Cupcake">
+                    </a>
+                    <p>Cupcake</p>
+                    <span>⏱ 45 min</span>
+                </div>
+                <div class="card">
+                    <a href="receitas.html">
+                        <img src="recursos/imagens/destaques/PratoDivertido.png" alt="Prato Divertido">
+                    </a>
+                    <p>Prato Divertido</p>
+                    <span>⏱ 45 min</span>
+                </div>
+                <div class="card">
+                    <a href="receitas.html">
+                        <img src="recursos/imagens/destaques/BoloMorango.png" alt="Bolo de Morango">
+                    </a>
+                    <p>Bolo de Morango</p>
+                    <span>⏱ 45 min</span>
+                </div>
+                <div class="card">
+                    <a href="receitas.html">
+                        <img src="recursos/imagens/destaques/Panquecas.png" alt="Panquecas">
+                    </a>
+                    <p>Panquecas</p>
+                    <span>⏱ 45 min</span>
+                </div>
+                <div class="card">
+                    <a href="receitas.html">
+                        <img src="recursos/imagens/destaques/Waffles.png" alt="Waffles">
+                    </a>
+                    <p>Waffles</p>
+                    <span>⏱ 45 min</span>
+                </div>
+                <div class="card">
+                    <a href="receitas.html">
+                        <img src="recursos/imagens/destaques/Sorvete.png" alt="Sorvete">
+                    </a>
+                    <p>Sorvete</p>
+                    <span>⏱ 45 min</span>
+                </div>
+
+            <script>
+                const cardsContainer = document.querySelector('.cards');
+                let scrollInterval;
+
+                cardsContainer.addEventListener('mouseenter', () => {
+                    scrollInterval = setInterval(() => {
+                        cardsContainer.scrollLeft += 100; 
+                        if (cardsContainer.scrollLeft >= cardsContainer.scrollWidth - cardsContainer.clientWidth) {
+                            cardsContainer.scrollLeft = 1;
+                        }
+                    }, 20);
+                });
+
+                cardsContainer.addEventListener('mouseleave', () => {
+                    clearInterval(scrollInterval);
+                });
+            </script>
+
+        </section>
+
+        <section>
+
+        <!-- Seção de contato -->
+        <section class="contato">
+            <h2>Cadastre-se para receber novidades</h2>
+            <form action="#">
+                <input type="text" id="nome" name="nome" required>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">ENVIAR</button>
+            </form>
+        </section>
+
+
     </main>
 
     <!-- Rodapé -->
