@@ -1,0 +1,211 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    background: #FFD4D4;
+    color: #105986;
+}
+
+/* Estilização do carrossel - home */
+  .carousel {
+    position: relative;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+  }
+
+  .carousel img.active {
+    display: block;
+  }
+
+
+  /* Estilização dos botões laterais do carrossel */
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;  
+  border: none;      
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn img {
+  width: auto;  
+  height: auto;
+  display: block;
+}
+
+.btn.prev { left: 10px; }
+.btn.next { right: 10px; }
+
+
+/* Estilização da outra seção - receitas */
+
+
+.principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*cima direita baixo esquerda */
+    padding: 5% 10% 10% 10%;
+}
+
+    /* Estilização das fontes */
+
+    .principal h2 {
+        font-family: 'Nunito', sans-serif;
+        color: #105986;
+        font-size: 48px;
+        text-align-last: left;
+        margin-left: 10%;
+    }
+
+    .principal span {
+        font-family: 'Nunito', sans-serif;
+        color: #105986;
+        font-size: 92px;
+        text-align-last: left;
+    }
+
+.principal img {
+    align-content: flex-end;
+}
+    
+.btnReceitas {
+    font-family: "Nunito", sans-serif;
+    background: #FF8585;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 36px;
+    padding: 20px 35px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    /* Alinhando ao texto */
+    margin-left: 10%;
+}
+
+
+/* Estilização dos destaques */
+.destaques {
+    background: #B2D4F5;
+    padding: 40px 20px;
+}
+
+.destaques h2 {
+    text-align: left;
+    font-family: 'Nunito', sans-serif;
+    font-size: 48px;
+    color: #033549;
+    font-weight: bolder;
+    align-items: start;
+    margin-left: 10%;
+    display: flex;
+}
+
+/* Estilizando os card(s) */
+
+.cards {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+}
+
+.cards::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    background: #FFF2EF;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    width: 120px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    width: 232px;
+    height: 343px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    color: #033549;
+}
+
+.card img {
+    width: 222px;
+    height: 222px;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+}
+
+.card p {
+    font-family: 'Nunito', sans-serif;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.card span {
+    text-align: left;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+/* Estilização do contato */
+.contato h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 40px;
+    color: #105986;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left: 10%;
+}
+
+.contato {
+    padding-bottom: 10%;
+    text-align: left;
+    background: none;
+    align-items: start;
+}
+
+.contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 15px 10% 0 10%;
+    align-items: self-start;
+}
+
+.contato input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    height: 40px;
+    width: 1000px;
+}
+
+.contato button {
+    background: #DB5B5B;
+    color: #F4FCFF;
+    border: none;
+    padding: 15px 55px 15px 55px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    font-size: 35px;
+}
+
