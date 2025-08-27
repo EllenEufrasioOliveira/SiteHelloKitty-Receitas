@@ -48,7 +48,7 @@
 
         <!-- Caixa de pesquisa - com estilização -->
         <div class="search-box">
-            <input type="text">
+            <input type="text" id="search">
             <button>
                 <img src="recursos/imagens/lupa.png" alt="Pesquisar">
             </button>
@@ -240,5 +240,20 @@
         &copy; 2025 Cozinhando com Hello Kitty. Todos os direitos reservados.
         <img src="recursos/imagens/footerhellokitty.png" alt="Hello Kitty">
     </footer>
+
+        <!-- JavaScript -->
+    <script>
+        const searchInput = document.getElementById("search");
+        const recipes = document.querySelectorAll(".card");
+
+        searchInput.addEventListener("keyup", function() {
+            const value = searchInput.value.toLowerCase();
+            recipes.forEach(card => {
+                const title = card.querySelector("h4").textContent.toLowerCase();
+                card.style.display = title.includes(value) ? "block" : "none";
+            });
+        });
+    </script>
+
 </body>
 </html>
