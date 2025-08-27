@@ -1,0 +1,27 @@
+.sobre {
+    display: flex;
+    font-size: 32px;
+    font-weight: bolder;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding: 0.6% 7%;
+    background-color: none;
+    box-shadow: #033549 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sobre p {
+    text-align: left;
+    flex-wrap: wrap;
+    color: #105986;
+    font-family: 'Nunito', sans-serif;
+    font-size: 32px;
+}
+
+.sobre img {
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 600px;
+    height: auto;
+}

@@ -62,38 +62,74 @@
             <div class="carousel">
                 <img src="recursos/imagens/container_imagem1.1.png" alt="Receita Hello Kitty" class="active">
                 <img src="recursos/imagens/container_imagem2.png" alt="Receita Hello Kitty">
-                <img src="recursos/imagens/container_imagem3.png" alt="Receita Hello Kitty">
-                <button class="btn prev" onclick="prevSlide()">
+                <img src="recursos/imagens/container_imagem3.png" alt="Receita Hello Kitty">  
+                
+                
+                <button class="btn prev">
                     <img src="recursos/imagens/btnEsquerdo.png" alt="Anterior">
                 </button>
-                <button class="btn next" onclick="nextSlide()">
+                <button class="btn next">
                     <img src="recursos/imagens/btnDireto.png" alt="Próximo">
                 </button>
-            
             </div>
 
 
         <!-- Função para navegar pelas outras imagens do carrossel - Sem rolagem infinita -->
         <script>
-            let currentIndex = 0;
-            const images = document.querySelectorAll(".carousel img");
+            const carrossel = document.querySelector('.carousel');
+            const btnEsquerda = document.querySelector('.btn.prev');
+            const btnDireita  = document.querySelector('.btn.next');
 
-            function showSlide(index) {
-            images.forEach((img, i) => {
-                img.classList.toggle("active", i === index);
-            });
+            let animando = false;
+
+            function stepSize() {
+                const first = carrossel.querySelector('img');
+                if (!first) return 0;
+                return first.getBoundingClientRect().width;
             }
 
-            function nextSlide() {
-            currentIndex = (currentIndex + 1) % images.length;
-            showSlide(currentIndex);
+            function next() {
+                if (animando) return;
+                animando = true;
+
+                const step = stepSize();
+                carrossel.style.transition = 'transform 0.1s ease-in-out';
+                carrossel.style.transform = `translateX(-${step}px)`;
+
+                setTimeout(() => {
+                    carrossel.appendChild(carrossel.firstElementChild); 
+                    carrossel.style.transition = 'none';
+                    carrossel.style.transform = 'translateX(0)';
+                    animando = false;
+                }, 300);
             }
 
-            function prevSlide() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            showSlide(currentIndex);
+            function prev() {
+                if (animando) return;
+                animando = true;
+
+                const step = stepSize();
+                carrossel.insertBefore(carrossel.lastElementChild, carrossel.firstElementChild); 
+                carrossel.style.transition = 'none';
+                carrossel.style.transform = `translateX(-${step}px)`;
+
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        carrossel.style.transition = 'transform 0.3s ease-in-out';
+                        carrossel.style.transform = 'translateX(0)';
+                        setTimeout(() => { animando = false; }, 300);
+                    });
+                });
             }
+
+            btnDireita.addEventListener('click', next);
+            btnEsquerda.addEventListener('click', prev);
+
+            // autoplay (a cada 4s)
+            setInterval(next, 4000);
         </script>
+
+
 
         <!-- Seção para ir até receitas -->
         <section class="principal">
@@ -119,49 +155,49 @@
                         <img src="recursos/imagens/destaques/Biscoitos.png" alt="Biscoitos">
                     </a>                    
                     <p>Biscoitos Amanteigados</p>
-                    <span>⏱ 45 min</span>
+                    <span>⏱ 30 min</span>
                 </div>
                 <div class="card">
                     <a href="receitas.html">
                         <img src="recursos/imagens/destaques/Cupcake.png" alt="Cupcake">
                     </a>
                     <p>Cupcake</p>
-                    <span>⏱ 45 min</span>
+                    <span>⏱ 40 min</span>
                 </div>
                 <div class="card">
                     <a href="receitas.html">
                         <img src="recursos/imagens/destaques/PratoDivertido.png" alt="Prato Divertido">
                     </a>
                     <p>Prato Divertido</p>
-                    <span>⏱ 45 min</span>
+                    <span>⏱ 30 min</span>
                 </div>
                 <div class="card">
                     <a href="receitas.html">
                         <img src="recursos/imagens/destaques/BoloMorango.png" alt="Bolo de Morango">
                     </a>
                     <p>Bolo de Morango</p>
-                    <span>⏱ 45 min</span>
+                    <span>⏱ 1h20 min</span>
                 </div>
                 <div class="card">
                     <a href="receitas.html">
                         <img src="recursos/imagens/destaques/Panquecas.png" alt="Panquecas">
                     </a>
                     <p>Panquecas</p>
-                    <span>⏱ 45 min</span>
+                    <span>⏱ 25 min</span>
                 </div>
                 <div class="card">
                     <a href="receitas.html">
                         <img src="recursos/imagens/destaques/Waffles.png" alt="Waffles">
                     </a>
                     <p>Waffles</p>
-                    <span>⏱ 45 min</span>
+                    <span>⏱ 35 min</span>
                 </div>
                 <div class="card">
                     <a href="receitas.html">
                         <img src="recursos/imagens/destaques/Sorvete.png" alt="Sorvete">
                     </a>
                     <p>Sorvete</p>
-                    <span>⏱ 45 min</span>
+                    <span>⏱ 15 min</span>
                 </div>
 
             <script>
@@ -190,8 +226,8 @@
         <section class="contato">
             <h2>Cadastre-se para receber novidades</h2>
             <form action="#">
-                <input type="text" id="nome" name="nome" required>
-                <input type="email" id="email" name="email" required>
+                <input type="text" id="nome" name="nome" required placeholder="Nome">
+                <input type="email" id="email" name="email" required placeholder="E-mail">
                 <button type="submit">ENVIAR</button>
             </form>
         </section>

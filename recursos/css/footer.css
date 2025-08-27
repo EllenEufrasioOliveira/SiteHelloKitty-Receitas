@@ -2,7 +2,7 @@ footer {
     background: #FF9999;
     text-align: center;
     padding: 45px;
-    position: fixed;
+    position: end;
     width: 100%;
     font-size: 16px;
     color: #DB5B5B;
