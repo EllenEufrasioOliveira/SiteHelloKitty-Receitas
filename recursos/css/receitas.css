@@ -1,0 +1,153 @@
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #105986;
+    border-radius: 25px;
+    padding: 5px 15px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-family: 'Quicksand', sans-serif;
+    width: 200px;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-box button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    max-width: 1300px;
+    margin: 5% 2% 0 2%;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+/* Filtros */
+aside {
+    width: 250px;
+    height: fit-content;
+    background: #B2D4F5;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+aside h3 {
+    font-family: 'nunito', sans-serif;
+    color: #105986;
+    font-weight: bolder;
+    margin: 20px 0 10px;
+    font-size: 30px;
+}
+
+aside h3:first-child {
+    margin-top: 0;
+}
+
+aside button {
+    font-family: 'NUNITO', sans-serif;
+    font-size: 24px;
+    text-align: left;
+    color: #105986;
+    font-weight: bolder;
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    margin: 15px 0;
+    background: #F4FCFF;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+aside button:hover, aside button.active {
+    background: #FF9EBB;
+    color: white;
+}
+
+/* Seção de receitas */
+.receitas {
+    flex: 1;
+    margin-left: 4%;
+}
+
+.receitas h2 {
+    font-family: 'nunito', sans-serif;
+    color: #105986;
+    font-size: 60px;
+    margin-top: 0%;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 100px;
+    margin-bottom: 10%;
+}
+
+.grid:hover {
+    gap: 100px;
+    transform: translateY(-5px);
+}
+
+.card {
+    background: #FF9999;
+    width: 280px;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-20px);
+}
+
+.card img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.card h4 {
+    font-family: 'nunito', sans-serif;
+    color: #105986;
+    margin: 10%;
+    font-size: 32px;
+    font-weight: bolder;
+}
+
+.card .info {
+    font-family: 'nunito', sans-serif;
+    color: #105986;
+    font-size: 24px;
+    text-align: center;
+    padding: auto;
+}
+
+.card .fundo{
+    background: #F4FCFF;
+    border-radius: 15px;
+    padding: 10px;
+    height: 190px;
+
+}
