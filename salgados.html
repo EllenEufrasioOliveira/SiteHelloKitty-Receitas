@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Receitas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="recursos/css/header.css">
+    <link rel="stylesheet" href="recursos/css/index.css">
+    <link rel="stylesheet" href="recursos/css/footer.css">
+    <link rel="stylesheet" href="recursos/css/receitas.css">
+
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Barra Superior -->
+    <header>
+        <div class="logo">
+            <a href="home.html">
+                <img src="recursos/imagens/logo.png" alt="Hello Kitty">
+            </a>        
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="receitas.html">RECEITAS</a></li>
+                <li><a href="galeria.html">GALERIA</a></li>
+                <li><a href="sobre.html">SOBRE NÓS</a></li>
+            </ul>
+        </nav>
+
+        <!-- Caixa de pesquisa -->
+        <div class="search-box">
+            <input type="text" id="search">
+            <button>
+                <img src="recursos/imagens/lupa.png" alt="Pesquisar">
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Filtros -->
+            <aside>
+                <h3>Categorias</h3>
+                <button>Salgados</button>
+                <button>Doces</button>
+                <button>Bebidas</button>
+
+                <h3>Tempo</h3>
+                <button>15 min</button>
+                <button>30 min</button>
+                <button>1 hora</button>
+
+                <h3>Nível</h3>
+                <button>Fácil</button>
+                <button>Médio</button>
+                <button>Difícil</button>
+            </aside>
+
+            <!-- Receitas -->
+            <section class="receitas">
+                <h2>Receitas</h2>
+
+                <div class="grid" id="recipes">
+                    <a href="receitas/prato-divertido.html" class="card">
+                        <img src="recursos/imagens/receitas/PratoDivertido.png" alt="">
+                        <div class="fundo">
+                            <h4>Prato Divertido</h4>
+                            <p class="info">45 min | Médio</p>  
+                        </div>
+                    </a>
+
+                    <a href="receitas/lanche-simples.html" class="card">
+                        <img src="recursos/imagens/receitas/lanche simples.png" alt="">
+                        <div class="fundo">
+                            <h4>Lanche Simples</h4>
+                            <p class="info">15 min | Fácil</p>  
+                        </div>
+                    </a>
+
+                    <a href="receitas/lanche-natural.html" class="card">
+                        <img src="recursos/imagens/receitas/lanche natural.png" alt="">
+                        <div class="fundo">
+                            <h4>Lanche Natural</h4>
+                            <p class="info">25 min | Fácil</p>
+                        </div>
+                    </a>
+
+                    <a href="receitas/mini-pizza.html" class="card">
+                        <img src="recursos/imagens/receitas/pizza.png" alt="">
+                        <div class="fundo">
+                            <h4>Mini Pizza</h4>
+                            <p class="info">20 min | Fácil</p>
+                        </div>
+                    </a>
+
+                    <a href="receitas/hamburguer.html" class="card">
+                        <img src="recursos/imagens/receitas/hamburguer.png" alt="">
+                        <div class="fundo">
+                            <h4>Hambúrguer</h4>
+                            <p class="info">30 min | Médio</p>  
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 Cozinhando com Hello Kitty. Todos os direitos reservados.
+        <img src="recursos/imagens/footerhellokitty.png" alt="Hello Kitty">
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const searchInput = document.getElementById("search");
+        const recipes = document.querySelectorAll(".card");
+
+        searchInput.addEventListener("keyup", function() {
+            const value = searchInput.value.toLowerCase();
+            recipes.forEach(card => {
+                const title = card.querySelector("h4").textContent.toLowerCase();
+                card.style.display = title.includes(value) ? "block" : "none";
+            });
+        });
+    </script>
+</body>
+</html>
