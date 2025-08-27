@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Kitty Receitas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- /* CSS */ -->
+    <link rel="stylesheet" href="../recursos/css/header.css">
+    <link rel="stylesheet" href="../recursos/css/index.css">
+    <link rel="stylesheet" href="../recursos/css/footer.css">
+    <link rel="stylesheet" href="../recursos/css/receitasindividual.css">
+
+    <!-- /* Fontes */ -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Barra Superior -->
+    <header>
+        <div class="logo">
+            <a href="../home.html">
+                <img src="../recursos/imagens/logo.png" alt="Hello Kitty">
+            </a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="../receitas.html">RECEITAS</a></li>
+                <li><a href="../galeria.html">GALERIA</a></li>
+                <li><a href="../sobre.html">SOBRE NÓS</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-box">
+            <input type="text" id="search">
+            <button>
+                <img src="../recursos/imagens/lupa.png" alt="Pesquisar">
+            </button>
+        </div>
+    </header>
+
+  <main>
+    <h1 class="titulo-receita">Mini Pizza Hello Kitty</h1>
+
+    <div class="conteudo-receita">
+      <!-- Ingredientes e preparo -->
+      <section class="info-receita">
+        <h2>Ingredientes</h2>
+        <ul class="ingredientes">
+          <p>4 discos de mini pizza</p> <br>
+          <p>Molho de tomate</p> <br>
+          <p>Queijo mussarela ralado</p> <br>
+          <p>Presunto picado</p> <br>
+          <p>Tomate cereja e azeitonas para decorar</p> <br>
+        </ul>
+
+        <h2>Modo de Preparo</h2>
+        <ol class="preparo">
+          <li>Espalhe molho nos discos.</li>
+          <li>Cubra com queijo e presunto.</li>
+          <li>Decore em formato da Hello Kitty.</li>
+          <li>Asse por 10 min a 180°C.</li>
+        </ol>
+      </section>
+
+      <!-- Imagem e info -->
+      <aside class="imagem-receita">
+        <img src="../recursos/imagens/receitas/pizza.png" alt="Mini Pizza Hello Kitty">
+        <div class="detalhes">
+          <span> <img src="../recursos/imagens/receitas/Timer.png" alt=""> 20 min</span>
+          <span> <img src="../recursos/imagens/receitas/Nivel.png" alt=""> Fácil</span>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+    <!-- Rodapé -->
+    <footer>
+        &copy; 2025 Cozinhando com Hello Kitty. Todos os direitos reservados.
+        <img src="../recursos/imagens/footerhellokitty.png" alt="Hello Kitty">
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const searchInput = document.getElementById("search");
+        const recipes = document.querySelectorAll(".card");
+
+        searchInput.addEventListener("keyup", function() {
+            const value = searchInput.value.toLowerCase();
+            recipes.forEach(card => {
+                const title = card.querySelector("h4").textContent.toLowerCase();
+                card.style.display = title.includes(value) ? "block" : "none";
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+/* Título */
+.titulo-receita {
+  font-family: 'nunito', sans-serif;
+  font-size: 64px;
+  font-weight: bolder;
+  color: #DB5B5B;
+  margin-left: 5%;
+}
+
+h2{
+    font-family: 'nunito', sans-serif;
+    font-weight: bolder;
+    color: #105986;
+    font-size: 36px;
+    margin-top: 0%;
+    margin-bottom: 10px;
+    margin-left: 3%;
+}
+
+/* Layout: receita à esquerda, imagem à direita */
+.conteudo-receita {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-left: 5%;
+}
+
+/* Caixa com fundo para ingredientes + preparo */
+.info-receita {
+  background: #ffe4e9;
+  padding: 30px;
+  border-radius: 12px;
+  flex: 1;
+  font-family: 'Nunito', sans-serif;
+  margin-bottom: 20px;
+}
+
+/* Ingredientes */
+.ingredientes {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.ingredientes p {
+  display: inline-block;
+  background: rgba(255, 153, 153, 0.5);
+  color: #105986;
+  padding: 12px 12px;
+  margin: 0 3% 2%;
+  border-radius: 30px;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* Modo de preparo */
+.preparo {
+  margin: 15px 0;
+  padding-left: 20px;
+  line-height: 1.6;
+  font-size: 20px;
+}
+
+.preparo li {
+  margin: 0 5% 1%;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* Imagem */
+.imagem-receita {
+  text-align: center;
+  margin-right: 5%;
+  margin-bottom: 12%;
+}
+
+.imagem-receita img {
+  width: 500px;
+  height: 500px;
+  border-radius: 65px;
+  border: 20px solid #FF9999;
+}
+
+.imagem-receita span {
+  display: block;
+  margin-top: 10px;
+  font-size: 32px;
+  color: #105986;
+}
+
+/* Detalhes da receita (tempo + dificuldade) */
+.detalhes {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.detalhes span {
+  display: flex;          
+  align-items: center;   
+  gap: 8px;               
+}
+
+.detalhes span img {
+  width: 45px;
+  height: 45px;
+  border: none;
+  align-items: center;
+}

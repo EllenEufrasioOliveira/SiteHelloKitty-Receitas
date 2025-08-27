@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Kitty Receitas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- /* CSS */ -->
+    <link rel="stylesheet" href="../recursos/css/header.css">
+    <link rel="stylesheet" href="../recursos/css/index.css">
+    <link rel="stylesheet" href="../recursos/css/footer.css">
+    <link rel="stylesheet" href="../recursos/css/receitasindividual.css">
+
+    <!-- /* Fontes */ -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Barra Superior -->
+    <header>
+        <div class="logo">
+            <a href="../home.html">
+                <img src="../recursos/imagens/logo.png" alt="Hello Kitty">
+            </a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="../receitas.html">RECEITAS</a></li>
+                <li><a href="../galeria.html">GALERIA</a></li>
+                <li><a href="../sobre.html">SOBRE NÓS</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-box">
+            <input type="text" id="search">
+            <button>
+                <img src="../recursos/imagens/lupa.png" alt="Pesquisar">
+            </button>
+        </div>
+    </header>
+
+  <main>
+    <h1 class="titulo-receita">Hambúrguer Hello Kitty</h1>
+
+    <div class="conteudo-receita">
+      <!-- Ingredientes e preparo -->
+      <section class="info-receita">
+        <h2>Ingredientes</h2>
+        <ul class="ingredientes">
+          <p>2 pães de hambúrguer</p> <br>
+          <p>2 hambúrgueres bovinos</p> <br>
+          <p>Queijo cheddar</p> <br>
+          <p>Alface e tomate</p> <br>
+          <p>Molho a gosto</p> <br>
+        </ul>
+
+        <h2>Modo de Preparo</h2>
+        <ol class="preparo">
+          <li>Grelhe os hambúrgueres até ficarem no ponto desejado.</li>
+          <li>Monte o lanche com pão, carne, queijo, alface, tomate e molho.</li>
+          <li>Use um molde para decorar o topo com a carinha da Hello Kitty.</li>
+        </ol>
+      </section>
+
+      <!-- Imagem e info -->
+      <aside class="imagem-receita">
+        <img src="../recursos/imagens/receitas/hamburguer.png" alt="Hambúrguer Hello Kitty">
+        <div class="detalhes">
+          <span> <img src="../recursos/imagens/receitas/Timer.png" alt=""> 25 min</span>
+          <span> <img src="../recursos/imagens/receitas/Nivel.png" alt=""> Médio</span>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+    <!-- Rodapé -->
+    <footer>
+        &copy; 2025 Cozinhando com Hello Kitty. Todos os direitos reservados.
+        <img src="../recursos/imagens/footerhellokitty.png" alt="Hello Kitty">
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const searchInput = document.getElementById("search");
+        const recipes = document.querySelectorAll(".card");
+
+        searchInput.addEventListener("keyup", function() {
+            const value = searchInput.value.toLowerCase();
+            recipes.forEach(card => {
+                const title = card.querySelector("h4").textContent.toLowerCase();
+                card.style.display = title.includes(value) ? "block" : "none";
+            });
+        });
+    </script>
+
+</body>
+</html>
