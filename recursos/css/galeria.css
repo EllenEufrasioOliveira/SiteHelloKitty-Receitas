@@ -1,0 +1,35 @@
+/* Container principal */
+.galeria {
+  padding: 40px;
+  background: #FFD4D4;
+}
+
+/* Títulos das seções */
+.titulo {
+  font-size: 40px;
+  font-weight: bolder;
+  margin-left: 3%;
+  color: #105986;
+}
+
+/* Grid de imagens */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 5%;
+  margin-bottom: 40px;
+}
+
+.grid img {
+  width: 100%;
+  border-radius: 35px;
+  border: 10px solid #FFB6C1;
+  cursor: pointer;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.grid img:hover {
+  transform: scale(1.05);
+  border-color: #FF8585;
+}
+
